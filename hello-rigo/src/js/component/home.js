@@ -8,10 +8,32 @@ import rigoImage from "../../img/rigo-baby.jpg";
 export const Page = props => {
 	return (
 		<div>
-			<MenuBar />
-			<Welcome />
 			<div>
-				<Cards />
+				<MenuBar />
+			</div>
+			<div className="container mt-3">
+				<div className="row justify-content-md-center mt-3">
+					<div className="col col-12 mt-3">
+						<Welcome />
+					</div>
+				</div>
+				<div className="row ">
+					<div className="col-3">
+						<Cards />
+					</div>
+					<div className="col-3 ">
+						<Cards />
+					</div>
+					<div className="col-3 ">
+						<Cards />
+					</div>
+					<div className="col-3 ">
+						<Cards />
+					</div>
+				</div>
+			</div>
+			<div>
+				<BottomPage />
 			</div>
 		</div>
 	);
@@ -22,10 +44,8 @@ Page.propTypes = {};
 // Construye Barra Menu
 const MenuBar = () => {
 	return (
-		<nav className="navbar fixed-top navbar-light bg-light">
-			<a className="navbar-brand" href="#">
-				Fixed tops
-			</a>
+		<nav className="navbar fixed-top navbar-dark bg-dark">
+			<a className="navbar-brand">Fixed tops</a>
 		</nav>
 	);
 };
@@ -34,8 +54,12 @@ const MenuBar = () => {
 
 const Cards = () => {
 	return (
-		<div className="card" style={{ width: "18rem" }}>
-			<img src="..." className="card-img-top" alt="..." />
+		<div className="card rounded-lg" style={{ width: "16rem" }}>
+			<img
+				src="http://placehold.it/500x325"
+				className="card-img-top"
+				alt="..."
+			/>
 			<div className="card-body">
 				<h5 className="card-title">Card title</h5>
 				<p className="card-text">
@@ -50,22 +74,30 @@ const Cards = () => {
 	);
 };
 
+//Construye bienvenida
+
 const Welcome = () => {
 	return (
-		<div className="jumbotron">
-			<h1 className="display-4">Hello, world!</h1>
+		<div className="jumbotron mt-5">
+			<h1 className="display-2">Hello, world!</h1>
 			<p className="lead">
 				This is a simple hero unit, a simple jumbotron-style component
 				for calling extra attention to featured content or information.
 			</p>
-			<hr className="my-4" />
-			<p>
-				It uses utility classes for typography and spacing to space
-				content out within the larger container.
-			</p>
+
 			<a className="btn btn-primary btn-lg" href="#" role="button">
 				Learn more
 			</a>
 		</div>
+	);
+};
+
+// Construye Pie
+
+const BottomPage = () => {
+	return (
+		<nav className="navbar navbar-dark bg-dark mt-3">
+			<a className="navbar-brand">Copyright</a>
+		</nav>
 	);
 };
